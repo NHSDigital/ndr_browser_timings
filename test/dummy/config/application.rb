@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "ndr_browser_timings"
+require 'ndr_browser_timings'
 
 module Dummy
   class Application < Rails::Application
@@ -16,4 +18,3 @@ module Dummy
     # the framework and any gems in your application.
   end
 end
-
