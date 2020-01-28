@@ -9,7 +9,6 @@ module NdrBrowserTimings
     # As defined by https://www.w3.org/TR/resource-timing-2/#sec-performanceresourcetiming
     RESOURCE_FIELDS = %w[
       initiatorType nextHopProtocol workerStart transferSize encodedBodySize decodedBodySize
-      startTime entryType duration
     ].freeze
 
     RESOURCE_FIELDS.each do |field|

@@ -42,6 +42,13 @@ module NdrBrowserTimings
       }
     end
 
+    private
+
+    # Some browsers will report funky extra values; drop them.
+    def sanitize_for_mass_assignment(attributes)
+      super.reject { |attr, _val| !respond_to?("#{attr}=") }
+    end
+
     def diff(end_time, start_time)
       return 0 unless start_time && end_time
 
