@@ -27,7 +27,7 @@ class NdrBrowserTimings {
   }
 
   sendNewPerformanceResourceTimingData() {
-    var newEntries = window.performance.getEntries()
+    var newEntries = window.performance.getEntriesByType('resource')
                      .filter((entry) => { return !~this.recordedEntries.indexOf(entry) })
                      .filter((entry) => { return !~entry.name.indexOf(this.endpoint) });
 
@@ -38,12 +38,13 @@ class NdrBrowserTimings {
 
   sendTimingData(data) {
     var request = new XMLHttpRequest(),
-        token = document.querySelector('meta[name="csrf-token"]').content;
+        metaTag = document.querySelector('meta[name="csrf-token"]'),
+        token = metaTag && metaTag.content;
 
     data.user_agent = navigator.userAgent;
 
     request.open('POST', this.endpoint);
-    request.setRequestHeader('X-CSRF-Token', token);
+    if (token) request.setRequestHeader('X-CSRF-Token', token);
     request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     request.send(JSON.stringify(data));
   }

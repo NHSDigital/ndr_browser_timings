@@ -8,6 +8,10 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path('../test/dummy/db/mi
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __dir__)
 require 'rails/test_help'
 
+ENV['INTEGRATION_DRIVER'] ||= 'chrome_headless'
+require 'ndr_dev_support/integration_testing'
+Capybara.server = :webrick
+
 # Filter out the backtrace from minitest while preserving the one from other libraries.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 

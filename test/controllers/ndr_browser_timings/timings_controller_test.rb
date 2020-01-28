@@ -10,7 +10,7 @@ module NdrBrowserTimings
           pathname: '/',
           performance_timing: {
             domainLookupStart: 1,
-            domainLookupEnd: 3,
+            domainLookupEnd: 3
           }
         }
 
