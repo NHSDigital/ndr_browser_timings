@@ -1,8 +1,28 @@
 # NdrBrowserTimings
-Short description and motivation.
+This Rails Engine adds JavaScript that allows for the collection of users' browser timing information.
 
 ## Usage
-How to use my plugin.
+Once installed (see below), timing information will be submitted from browsers
+via AJAX, back to the mounted engine, and passed to any configured recorders.
+
+Recorders can be any callable object, and can be configured like so:
+
+```ruby
+NdrBrowserTimings.recorders << ->(timing) { MyService.notify(timing) }
+```
+
+This gem bundles some recorders:
+
+```ruby
+# Send info to the Rails log:
+require 'ndr_browser_timings/recorders/logger'
+NdrBrowserTimings.recorders << NdrBrowserTimings::Recorders::Logger.new
+
+# Send info to prometheus:
+require 'ndr_browser_timings/recorders/ndr_stats'
+NdrStats.configure(...)
+NdrBrowserTimings.recorders << NdrBrowserTimings::Recorders::NdrStats.new
+```
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -21,8 +41,17 @@ Or install it yourself as:
 $ gem install ndr_browser_timings
 ```
 
-## Contributing
-Contribution directions go here.
+Inject the client library into pages you want timings submitted from:
+
+```javascript
+//=require 'ndr_browser_timings/ndr_browser_timings'
+```
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## TODO:
+* DRY up mount point
+* test coverage of bundled recorders
+* unrecordable handler
+* authenication
