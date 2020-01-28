@@ -18,3 +18,16 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + '/files'
   ActiveSupport::TestCase.fixtures :all
 end
+
+ActiveSupport::TestCase.class_eval do
+  def capture_recordings
+    original = NdrBrowserTimings.recorders
+
+    result = []
+    NdrBrowserTimings.recorders = [->(timing) { result << timing }]
+    yield
+    result
+  ensure
+    NdrBrowserTimings.recorders = original
+  end
+end

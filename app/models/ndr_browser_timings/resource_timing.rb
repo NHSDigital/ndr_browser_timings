@@ -4,8 +4,6 @@ module NdrBrowserTimings
   # These are similar to, but not the same as, the data structure
   # returned from the primary navigation.
   class ResourceTiming < PerformanceTiming
-    include ActiveModel::Model
-
     # As defined by https://www.w3.org/TR/resource-timing-2/#sec-performanceresourcetiming
     RESOURCE_FIELDS = %w[
       initiatorType nextHopProtocol workerStart transferSize encodedBodySize decodedBodySize

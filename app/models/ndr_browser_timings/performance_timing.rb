@@ -52,7 +52,7 @@ module NdrBrowserTimings
     def diff(end_time, start_time)
       return 0 unless start_time && end_time
 
-      end_time - start_time
+      (end_time.to_i - start_time.to_i).round
     end
   end
 end
