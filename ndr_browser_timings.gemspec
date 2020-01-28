@@ -7,25 +7,13 @@ require "ndr_browser_timings/version"
 Gem::Specification.new do |spec|
   spec.name        = "ndr_browser_timings"
   spec.version     = NdrBrowserTimings::VERSION
-  spec.authors     = ["Josh Pencheon"]
-  spec.email       = ["josh.pencheon@googlemail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of NdrBrowserTimings."
-  spec.description = "TODO: Description of NdrBrowserTimings."
-  spec.license     = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.authors     = ["NDR Development Team"]
+  spec.summary     = "Capture request timing data from clients"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", "~> 6.0.2", ">= 6.0.2.1"
+  spec.add_dependency "rails", ">= 5.2", "< 6.1"
 
+  spec.add_development_dependency "ndr_dev_support", "~> 5.5"
   spec.add_development_dependency "sqlite3"
 end
