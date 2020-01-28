@@ -1,0 +1,7 @@
+<%= @message %>
+
+<script type="text/javascript" charset="utf-8">
+  var request = new XMLHttpRequest();
+  request.open('GET', '<%= ajax_path %>');
+  request.send();
+</script>
