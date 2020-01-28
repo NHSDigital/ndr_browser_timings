@@ -1,39 +1,52 @@
-window.addEventListener('load', function() {
-  // Defer the timing collection in order to allow the onLoad event to finish first.
-  setTimeout(sendPerformanceTimingData, 0);
+class NdrBrowserTimings {
+  constructor(endpoint) {
+    // Path to which data is sent:
+    this.endpoint = endpoint
 
-  // Periodically, send timing for AJAX requests:
-  setInterval(sendNewPerformanceResourceTimingData, 1000);
-});
+    // resource timings that have been sent:
+    this.recordedEntries = []
 
-function sendPerformanceTimingData() {
-  sendTimingData({
-    'pathname': window.location.pathname,
-    'performance_timing': window.performance.timing
-  });
-};
+    this.bindListeners()
+  }
 
-var oldEntries = [];
-var endpoint = '/browser_timings'
+  bindListeners() {
+    window.addEventListener('load', () => {
+      // Defer the timing collection in order to allow the onLoad event to finish first.
+      setTimeout(() => { this.sendPerformanceTimingData() }, 0);
 
-function sendNewPerformanceResourceTimingData() {
-  var newEntries = window.performance.getEntries()
-                   .filter(function(entry) { return !~oldEntries.indexOf(entry) })
-                   .filter(function(entry) { return !~entry.name.indexOf(endpoint) });
+      // Periodically, send timing for AJAX requests:
+      setInterval(() => { this.sendNewPerformanceResourceTimingData() }, 1000);
+    });
+  }
 
-  newEntries.forEach(function(resourceTiming) { oldEntries.push(resourceTiming) });
+  sendPerformanceTimingData() {
+    this.sendTimingData({
+      'pathname': window.location.pathname,
+      'performance_timing': window.performance.timing
+    });
+  }
 
-  if (newEntries.length) sendTimingData({ 'resource_timings': newEntries });
-};
+  sendNewPerformanceResourceTimingData() {
+    var newEntries = window.performance.getEntries()
+                     .filter((entry) => { return !~this.recordedEntries.indexOf(entry) })
+                     .filter((entry) => { return !~entry.name.indexOf(this.endpoint) });
 
-function sendTimingData(data) {
-  var request = new XMLHttpRequest(),
-      token = document.querySelector('meta[name="csrf-token"]').content;
+    newEntries.forEach((resourceTiming) => { this.recordedEntries.push(resourceTiming) });
 
-  data.user_agent = navigator.userAgent;
+    if (newEntries.length) this.sendTimingData({ 'resource_timings': newEntries });
+  }
 
-  request.open('POST', endpoint);
-  request.setRequestHeader('X-CSRF-Token', token);
-  request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-  request.send(JSON.stringify(data));
-};
+  sendTimingData(data) {
+    var request = new XMLHttpRequest(),
+        token = document.querySelector('meta[name="csrf-token"]').content;
+
+    data.user_agent = navigator.userAgent;
+
+    request.open('POST', this.endpoint);
+    request.setRequestHeader('X-CSRF-Token', token);
+    request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    request.send(JSON.stringify(data));
+  }
+}
+
+new NdrBrowserTimings('/browser_timings');
