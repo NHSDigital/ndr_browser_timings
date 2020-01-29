@@ -35,6 +35,17 @@ ActiveSupport::TestCase.class_eval do
   ensure
     NdrBrowserTimings.recorders = original
   end
+
+  def with_auth_check(checker)
+    original = NdrBrowserTimings.check_current_user_authentication
+    NdrBrowserTimings.check_current_user_authentication = checker
+    yield
+  ensure
+    NdrBrowserTimings.check_current_user_authentication = original
+  end
 end
+
+# Don't require authentication
+NdrBrowserTimings.check_current_user_authentication = ->(_context) { true }
 
 require 'mocha/minitest'

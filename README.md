@@ -53,8 +53,15 @@ and the `<meta>` tag to provide configuration to the client library:
 <%= ndr_browser_timings_meta_tag %>
 ```
 
+This is an isolated engine, so you'll need to configure with an authentication check:
+
+```ruby
+# Allow all requests through (careful!):
+NdrBrowserTimings.check_current_user_authentication = ->(request) { true }
+```
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## TODO:
-* authenication
+* javascript fallback
