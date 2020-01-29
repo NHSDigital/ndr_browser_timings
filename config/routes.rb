@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 NdrBrowserTimings::Engine.routes.draw do
-  post '/', to: 'timings#receive'
+  post '/', to: 'timings#receive', as: 'receive'
 end

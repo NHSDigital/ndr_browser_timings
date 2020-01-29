@@ -1,7 +1,7 @@
 class NdrBrowserTimings {
   constructor(endpoint) {
     // Path to which data is sent:
-    this.endpoint = endpoint
+    this.endpoint = this.readMetaTag('ndr_broser_timings_endpoint')
 
     // resource timings that have been sent:
     this.recordedEntries = []
@@ -38,8 +38,7 @@ class NdrBrowserTimings {
 
   sendTimingData(data) {
     var request = new XMLHttpRequest(),
-        metaTag = document.querySelector('meta[name="csrf-token"]'),
-        token = metaTag && metaTag.content;
+        token = this.readMetaTag('csrf-token');
 
     data.user_agent = navigator.userAgent;
 
@@ -48,6 +47,11 @@ class NdrBrowserTimings {
     request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     request.send(JSON.stringify(data));
   }
+
+  readMetaTag(name) {
+    var metaTag = document.querySelector('meta[name="' + name + '"]');
+    return metaTag && metaTag.content;
+  }
 }
 
-new NdrBrowserTimings('/browser_timings');
+new NdrBrowserTimings();

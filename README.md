@@ -47,11 +47,16 @@ Inject the client library into pages you want timings submitted from:
 //=require 'ndr_browser_timings/ndr_browser_timings'
 ```
 
+and the `<meta>` tag to provide configuration to the client library:
+
+```ruby
+<%= ndr_browser_timings_meta_tag %>
+```
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## TODO:
-* DRY up mount point
 * test coverage of bundled recorders
 * unrecordable handler
 * authenication

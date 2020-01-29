@@ -17,7 +17,3 @@ module NdrBrowserTimings
 
   self.recorders = []
 end
-
-# NdrBrowserTimings.recorders << ->(timing) { binding.irb }
-require 'ndr_browser_timings/recorders/logger'
-NdrBrowserTimings.recorders << NdrBrowserTimings::Recorders::Logger.new
