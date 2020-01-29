@@ -7,6 +7,7 @@ require_relative '../test/dummy/config/environment'
 ActiveRecord::Migrator.migrations_paths = [File.expand_path('../test/dummy/db/migrate', __dir__)]
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __dir__)
 require 'rails/test_help'
+require 'minitest/mock'
 
 ENV['INTEGRATION_DRIVER'] ||= 'chrome_headless'
 require 'ndr_dev_support/integration_testing'
@@ -35,3 +36,5 @@ ActiveSupport::TestCase.class_eval do
     NdrBrowserTimings.recorders = original
   end
 end
+
+require 'mocha/minitest'

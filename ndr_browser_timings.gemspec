@@ -16,6 +16,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rails', '>= 5.2', '< 6.1'
 
+  spec.add_development_dependency 'mocha'
   spec.add_development_dependency 'ndr_dev_support', '~> 5.5'
+  spec.add_development_dependency 'ndr_stats' # support is included, but not required.
   spec.add_development_dependency 'sqlite3'
 end

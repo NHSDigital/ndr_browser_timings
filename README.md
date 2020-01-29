@@ -57,6 +57,5 @@ and the `<meta>` tag to provide configuration to the client library:
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## TODO:
-* test coverage of bundled recorders
 * unrecordable handler
 * authenication
