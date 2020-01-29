@@ -2,7 +2,7 @@
 
 module NdrBrowserTimings
   # This helper file is injected into the host application.
-  module ApplicationHelper
+  module MetaTagHelper
     # Allow engine mount location to be made available to javascript
     # included by the host application. The alternative would be to
     # server pre-configured JS through the engine directly, rather than

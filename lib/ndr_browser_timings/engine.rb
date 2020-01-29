@@ -6,7 +6,7 @@ module NdrBrowserTimings
 
     initializer 'ndr_browser_timings.inject_helpers' do |app|
       app.config.to_prepare do
-        ::ApplicationHelper.include(NdrBrowserTimings::ApplicationHelper)
+        ::ApplicationHelper.include(MetaTagHelper)
       end
     end
   end
