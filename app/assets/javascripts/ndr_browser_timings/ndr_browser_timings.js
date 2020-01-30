@@ -1,5 +1,5 @@
 class NdrBrowserTimings {
-  constructor(endpoint) {
+  constructor (endpoint) {
     // Path to which data is sent:
     this.endpoint = this.readMetaTag('ndr_broser_timings_endpoint')
 
@@ -9,49 +9,49 @@ class NdrBrowserTimings {
     this.bindListeners()
   }
 
-  bindListeners() {
+  bindListeners () {
     window.addEventListener('load', () => {
       // Defer the timing collection in order to allow the onLoad event to finish first.
-      setTimeout(() => { this.sendPerformanceTimingData() }, 0);
+      setTimeout(() => { this.sendPerformanceTimingData() }, 0)
 
       // Periodically, send timing for AJAX requests:
-      setInterval(() => { this.sendNewPerformanceResourceTimingData() }, 1000);
-    });
+      setInterval(() => { this.sendNewPerformanceResourceTimingData() }, 1000)
+    })
   }
 
-  sendPerformanceTimingData() {
+  sendPerformanceTimingData () {
     this.sendTimingData({
-      'pathname': window.location.pathname,
-      'performance_timing': window.performance.timing
-    });
+      pathname: window.location.pathname,
+      performance_timing: window.performance.timing
+    })
   }
 
-  sendNewPerformanceResourceTimingData() {
+  sendNewPerformanceResourceTimingData () {
     var newEntries = window.performance.getEntriesByType('resource')
-                     .filter((entry) => { return !~this.recordedEntries.indexOf(entry) })
-                     .filter((entry) => { return !~entry.name.indexOf(this.endpoint) });
+      .filter((entry) => { return !~this.recordedEntries.indexOf(entry) })
+      .filter((entry) => { return !~entry.name.indexOf(this.endpoint) })
 
-    newEntries.forEach((resourceTiming) => { this.recordedEntries.push(resourceTiming) });
+    newEntries.forEach((resourceTiming) => { this.recordedEntries.push(resourceTiming) })
 
-    if (newEntries.length) this.sendTimingData({ 'resource_timings': newEntries });
+    if (newEntries.length) this.sendTimingData({ resource_timings: newEntries })
   }
 
-  sendTimingData(data) {
-    var request = new XMLHttpRequest(),
-        token = this.readMetaTag('csrf-token');
+  sendTimingData (data) {
+    var request = new XMLHttpRequest()
+    var token = this.readMetaTag('csrf-token')
 
-    data.user_agent = navigator.userAgent;
+    data.user_agent = navigator.userAgent
 
-    request.open('POST', this.endpoint);
-    if (token) request.setRequestHeader('X-CSRF-Token', token);
-    request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    request.send(JSON.stringify(data));
+    request.open('POST', this.endpoint)
+    if (token) request.setRequestHeader('X-CSRF-Token', token)
+    request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+    request.send(JSON.stringify(data))
   }
 
-  readMetaTag(name) {
-    var metaTag = document.querySelector('meta[name="' + name + '"]');
-    return metaTag && metaTag.content;
+  readMetaTag (name) {
+    var metaTag = document.querySelector('meta[name="' + name + '"]')
+    return metaTag && metaTag.content
   }
 }
 
-new NdrBrowserTimings();
+new NdrBrowserTimings()
