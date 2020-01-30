@@ -6,7 +6,7 @@ class NdrBrowserTimings {
     // resource timings that have been sent:
     this.recordedEntries = []
 
-    this.bindListeners()
+    if (this.endpoint) this.bindListeners()
   }
 
   bindListeners () {
