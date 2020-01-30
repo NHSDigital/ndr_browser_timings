@@ -7,6 +7,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 require 'ndr_browser_timings'
 
+# Don't require authentication
+NdrBrowserTimings.check_current_user_authentication = ->(_context) { true }
+
 module Dummy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

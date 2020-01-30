@@ -45,7 +45,4 @@ ActiveSupport::TestCase.class_eval do
   end
 end
 
-# Don't require authentication
-NdrBrowserTimings.check_current_user_authentication = ->(_context) { true }
-
 require 'mocha/minitest'
