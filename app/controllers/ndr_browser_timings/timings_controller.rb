@@ -17,7 +17,7 @@ module NdrBrowserTimings
         end
       end
 
-      head :accepted
+      head :no_content
     end
 
     private
