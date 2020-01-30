@@ -16,6 +16,8 @@ module NdrBrowserTimings
           NdrBrowserTimings.record(timing)
         end
       end
+
+      head :accepted
     end
 
     private

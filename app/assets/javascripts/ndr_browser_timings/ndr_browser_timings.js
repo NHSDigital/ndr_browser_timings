@@ -18,12 +18,16 @@ function NdrBrowserTimings () {
 
   this.sendNewPerformanceResourceTimingData = function () {
     var newEntries = window.performance.getEntriesByType('resource')
-      .filter((entry) => { return !~this.recordedEntries.indexOf(entry) })
-      .filter((entry) => { return !~entry.name.indexOf(this.endpoint) })
+      .filter(function (entry) { return !~this.recordedEntries.indexOf(JSON.stringify(entry)) }.bind(this))
+      .filter(function (entry) { return !~entry.name.indexOf(this.endpoint) }.bind(this))
 
-    newEntries.forEach((resourceTiming) => { this.recordedEntries.push(resourceTiming) })
+    if (newEntries.length) {
+      this.sendTimingData({ resource_timings: newEntries })
 
-    if (newEntries.length) this.sendTimingData({ resource_timings: newEntries })
+      // IE11 can't compare the timing objects directly; compare stringified versions instead...
+      newEntries = newEntries.map(function(entry) { return JSON.stringify(entry) })
+      this.recordedEntries = this.recordedEntries.concat(newEntries)
+    }
   }
 
   this.sendTimingData = function (data) {
