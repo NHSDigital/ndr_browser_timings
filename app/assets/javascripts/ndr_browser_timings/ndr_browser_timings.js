@@ -1,4 +1,6 @@
-(function() {
+/* global XMLHttpRequest */
+
+(function () {
   function NdrBrowserTimings () {
     this.bindListeners = function () {
       window.addEventListener('load', function () {
@@ -6,28 +8,34 @@
         setTimeout(this.sendPerformanceTimingData, 0)
 
         // Periodically, send timing for AJAX requests:
-        setInterval(this.sendNewPerformanceResourceTimingData, 1000)
+        this.intervalId = setInterval(this.sendNewPerformanceResourceTimingData, 1000)
       }.bind(this))
     }
 
     this.sendPerformanceTimingData = function () {
-      this.sendTimingData({
-        'pathname': window.location.pathname,
-        'performance_timing': window.performance.timing
-      })
+      try {
+        this.sendTimingData({
+          pathname: window.location.pathname,
+          performance_timing: window.performance.timing
+        })
+      } catch (_err) { }
     }
 
     this.sendNewPerformanceResourceTimingData = function () {
-      var newEntries = window.performance.getEntriesByType('resource')
-        .filter(function (entry) { return !~this.recordedEntries.indexOf(JSON.stringify(entry)) }.bind(this))
-        .filter(function (entry) { return !~entry.name.indexOf(this.endpoint) }.bind(this))
+      try {
+        var newEntries = window.performance.getEntriesByType('resource')
+          .filter(function (entry) { return !~this.recordedEntries.indexOf(JSON.stringify(entry)) }.bind(this))
+          .filter(function (entry) { return !~entry.name.indexOf(this.endpoint) }.bind(this))
 
-      if (newEntries.length) {
-        this.sendTimingData({ resource_timings: newEntries })
+        if (newEntries.length) {
+          this.sendTimingData({ resource_timings: newEntries })
 
-        // IE11 can't compare the timing objects directly; compare stringified versions instead...
-        newEntries = newEntries.map(function(entry) { return JSON.stringify(entry) })
-        this.recordedEntries = this.recordedEntries.concat(newEntries)
+          // IE11 can't compare the timing objects directly; compare stringified versions instead...
+          newEntries = newEntries.map(function (entry) { return JSON.stringify(entry) })
+          this.recordedEntries = this.recordedEntries.concat(newEntries)
+        }
+      } catch (_err) {
+        this.abort()
       }
     }
 
@@ -48,11 +56,16 @@
       return metaTag && metaTag.content
     }
 
+    this.abort = function () {
+      if (this.intervalId) clearInterval(this.intervalId)
+    }
+
     // resource timings that have been sent:
     this.recordedEntries = []
 
     // Path to which data is sent:
     this.endpoint = this.readMetaTag('ndr_broser_timings_endpoint')
+    this.intervalId = null
     if (this.endpoint) this.bindListeners()
   }
 
