@@ -20,7 +20,7 @@ module NdrBrowserTimings
         tags = timing.tags
 
         timing.timeline.each do |key, duration|
-          ::NdrStats.timing(key, duration, **tags)
+          ::NdrStats.timing(:browser_timing, duration, **tags, type: key)
         end
       end
     end

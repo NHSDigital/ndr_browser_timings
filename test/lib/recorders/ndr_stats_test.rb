@@ -16,7 +16,8 @@ module NdrBrowserTimings
 
       test 'should log to NdrStats' do
         @timing.stubs(timeline: { dns: 1 })
-        ::NdrStats.expects(:timing).with(:dns, 1, controller: :foo, action: :bar)
+        tags = { type: :dns, controller: :foo, action: :bar }
+        ::NdrStats.expects(:timing).with(:browser_timing, 1, **tags)
 
         @recorder.call(@timing)
       end
