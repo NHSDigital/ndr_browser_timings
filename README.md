@@ -63,5 +63,8 @@ NdrBrowserTimings.check_current_user_authentication = ->(request) { true }
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Code of Conduct
+Everyone interacting in the NdrBrowserTimings project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the `CODE_OF_CONDUCT.md`.
+
 ## TODO:
 * javascript fallback
