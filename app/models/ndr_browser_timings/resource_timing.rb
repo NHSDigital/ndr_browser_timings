@@ -13,5 +13,15 @@ module NdrBrowserTimings
       attr_accessor field.underscore
       alias_attribute field, field.underscore if field != field.underscore
     end
+
+    def resource_fields
+      RESOURCE_FIELDS.each_with_object({}) do |key, hash|
+        hash[key] = send(key)
+      end
+    end
+
+    def timing_fields
+      super.merge(resource_fields)
+    end
   end
 end

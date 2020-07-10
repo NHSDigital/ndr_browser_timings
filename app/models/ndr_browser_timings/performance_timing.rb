@@ -42,6 +42,12 @@ module NdrBrowserTimings
       }
     end
 
+    def timing_fields
+      TIMING_FIELDS.each_with_object({}) do |key, hash|
+        hash[key] = send(key)
+      end
+    end
+
     private
 
     # Some browsers will report funky extra values; drop them.
