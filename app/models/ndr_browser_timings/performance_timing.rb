@@ -44,7 +44,10 @@ module NdrBrowserTimings
 
     def timing_fields
       TIMING_FIELDS.each_with_object({}) do |key, hash|
-        hash[key] = send(key)
+        value = send(key)
+        next if value.nil?
+
+        hash[key] = value
       end
     end
 
