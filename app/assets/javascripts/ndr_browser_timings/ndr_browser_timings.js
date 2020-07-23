@@ -72,9 +72,9 @@
     this.recordedEntries = []
 
     // Path to which data is sent:
-    this.endpoint = this.readMetaTag('ndr_broser_timings_endpoint')
+    this.endpoint = this.readMetaTag('ndr_browser_timings_endpoint')
     // What percentage of requests should we record data for?
-    this.sampleRate = parseFloat(this.readMetaTag('ndr_broser_timings_sample_rate') || 1)
+    this.sampleRate = parseFloat(this.readMetaTag('ndr_browser_timings_sample_rate') || 1)
 
     this.intervalId = null
     if (this.endpoint) this.bindListeners()

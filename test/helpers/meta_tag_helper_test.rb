@@ -9,7 +9,7 @@ class MetaTagHelperTest < ActionView::TestCase
     actual = ndr_browser_timings_meta_tag
 
     assert_equal <<~HTML.strip, actual
-      <meta name="ndr_broser_timings_endpoint" content="/browser_timings/" /><meta name="ndr_broser_timings_sample_rate" content="1.0" />
+      <meta name="ndr_browser_timings_endpoint" content="/browser_timings/" /><meta name="ndr_browser_timings_sample_rate" content="1.0" />
     HTML
   end
 
@@ -17,7 +17,7 @@ class MetaTagHelperTest < ActionView::TestCase
     actual = ndr_browser_timings_meta_tag(sample_rate: 0.33)
 
     assert_equal <<~HTML.strip, actual
-      <meta name="ndr_broser_timings_endpoint" content="/browser_timings/" /><meta name="ndr_broser_timings_sample_rate" content="0.33" />
+      <meta name="ndr_browser_timings_endpoint" content="/browser_timings/" /><meta name="ndr_browser_timings_sample_rate" content="0.33" />
     HTML
   end
 end

@@ -8,8 +8,8 @@ module NdrBrowserTimings
     # server pre-configured JS through the engine directly, rather than
     # as an asset.
     def ndr_browser_timings_meta_tag(sample_rate: 1)
-      tag('meta', name: 'ndr_broser_timings_endpoint', content: ndr_browser_timings.receive_path) +
-        tag('meta', name: 'ndr_broser_timings_sample_rate', content: sample_rate.to_f)
+      tag('meta', name: 'ndr_browser_timings_endpoint', content: ndr_browser_timings.receive_path) +
+        tag('meta', name: 'ndr_browser_timings_sample_rate', content: sample_rate.to_f)
     end
   end
 end
