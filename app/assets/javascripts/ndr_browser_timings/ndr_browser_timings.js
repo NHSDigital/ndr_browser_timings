@@ -14,10 +14,12 @@
 
     this.sendPerformanceTimingData = function () {
       try {
-        this.sendTimingData({
-          pathname: window.location.pathname,
-          performance_timing: window.performance.timing
-        })
+        if (this.shouldSample()) {
+          this.sendTimingData({
+            pathname: window.location.pathname,
+            performance_timing: window.performance.timing
+          })
+        }
       } catch (_err) { }
     }
 
@@ -27,6 +29,7 @@
           .filter(function (entry) { return entry.responseEnd }) // drop those still in progress
           .filter(function (entry) { return !~this.recordedEntries.indexOf(JSON.stringify(entry)) }.bind(this))
           .filter(function (entry) { return !~entry.name.indexOf(this.endpoint) }.bind(this))
+          .filter(function (entry) { return this.shouldSample() }.bind(this))
 
         if (newEntries.length) {
           this.sendTimingData({ resource_timings: newEntries })
@@ -61,11 +64,18 @@
       if (this.intervalId) clearInterval(this.intervalId)
     }
 
+    this.shouldSample = function () {
+      return this.sampleRate > Math.random()
+    }
+
     // resource timings that have been sent:
     this.recordedEntries = []
 
     // Path to which data is sent:
     this.endpoint = this.readMetaTag('ndr_broser_timings_endpoint')
+    // What percentage of requests should we record data for?
+    this.sampleRate = parseFloat(this.readMetaTag('ndr_broser_timings_sample_rate') || 1)
+
     this.intervalId = null
     if (this.endpoint) this.bindListeners()
   }

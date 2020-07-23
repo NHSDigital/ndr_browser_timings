@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+### Added
+* Support sampling, to reduce data volumes (#1)
+
 ### Fixed
 * Stop capturing incomplete timing data from AJAX requests (#2)
 

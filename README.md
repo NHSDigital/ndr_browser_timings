@@ -54,6 +54,13 @@ and the `<meta>` tag to provide configuration to the client library:
 <%= ndr_browser_timings_meta_tag %>
 ```
 
+By default, all requests will be instrumented. You can alternatively elect to only
+sample a fraction of requests, to reduce data collected:
+
+```ruby
+<%= ndr_browser_timings_meta_tag(sample_rate: 0.1) %>
+```
+
 This is an isolated engine, so you'll need to configure with an authentication check:
 
 ```ruby
