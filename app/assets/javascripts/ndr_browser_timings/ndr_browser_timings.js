@@ -24,6 +24,7 @@
     this.sendNewPerformanceResourceTimingData = function () {
       try {
         var newEntries = window.performance.getEntriesByType('resource')
+          .filter(function (entry) { return entry.responseEnd }) // drop those still in progress
           .filter(function (entry) { return !~this.recordedEntries.indexOf(JSON.stringify(entry)) }.bind(this))
           .filter(function (entry) { return !~entry.name.indexOf(this.endpoint) }.bind(this))
 

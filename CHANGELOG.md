@@ -1,5 +1,7 @@
 ## [Unreleased]
-*no unreleased changes*
+
+### Fixed
+* Stop capturing incomplete timing data from AJAX requests (#2)
 
 ## 0.3.0 / 2020-02-11
 ### Changed
