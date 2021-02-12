@@ -1,4 +1,4 @@
-# NdrBrowserTimings [![Build Status](https://travis-ci.org/PublicHealthEngland/ndr_browser_timings.svg?branch=master)](https://travis-ci.org/PublicHealthEngland/ndr_browser_timings)
+# NdrBrowserTimings [![Build Status](https://github.com/publichealthengland/ndr_browser_timings/workflows/Test/badge.svg)](https://github.com/publichealthengland/ndr_browser_timings/actions?query=workflow%3Atest) [![Gem Version](https://badge.fury.io/rb/ndr_browser_timings.svg)](https://rubygems.org/gems/ndr_browser_timings)
 
 This Rails Engine adds JavaScript that allows for the collection of users' browser timing information.
 
