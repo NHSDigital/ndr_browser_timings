@@ -1,4 +1,8 @@
 ## [Unreleased]
+*no unreleased changes*
+
+## 0.4.1 / 2022-04-08
+### Added
 * Support Rails 6.1
 
 ## 0.4.0 / 2020-07-23
