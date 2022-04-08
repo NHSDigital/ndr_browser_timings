@@ -1,5 +1,5 @@
 ## [Unreleased]
-*no unreleased changes*
+* Support Rails 6.1
 
 ## 0.4.0 / 2020-07-23
 ### Added

@@ -14,10 +14,12 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  spec.add_dependency 'rails', '>= 5.2', '< 6.1'
+  spec.add_dependency 'rails', '>= 5.2', '< 7'
+
+  spec.required_ruby_version = '>= 2.6.0'
 
   spec.add_development_dependency 'mocha'
-  spec.add_development_dependency 'ndr_dev_support', '~> 5.5'
+  spec.add_development_dependency 'ndr_dev_support', '~> 6.0'
   spec.add_development_dependency 'ndr_stats' # support is included, but not required.
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'webrick'
