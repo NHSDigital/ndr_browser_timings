@@ -11,7 +11,7 @@ require 'minitest/mock'
 
 ENV['INTEGRATION_DRIVER'] ||= 'chrome_headless'
 require 'ndr_dev_support/integration_testing'
-Capybara.server = :webrick
+Capybara.server = :puma, { Silent: true }
 
 # Filter out the backtrace from minitest while preserving the one from other libraries.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
