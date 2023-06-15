@@ -16,9 +16,9 @@ Gem::Specification.new do |spec|
   spec.files       = `git ls-files -z`.split("\x0").
                      select { |f| gem_files.include?(f.split('/')[0]) }
 
-  spec.add_dependency 'rails', '>= 6.0', '< 7.1'
+  spec.add_dependency 'rails', '>= 6.1', '< 7.1'
 
-  spec.required_ruby_version = '>= 2.7.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.add_development_dependency 'mocha'
   spec.add_development_dependency 'ndr_dev_support', '>= 6.0'
