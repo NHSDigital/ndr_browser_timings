@@ -16,14 +16,18 @@ Gem::Specification.new do |spec|
   spec.files       = `git ls-files -z`.split("\x0").
                      select { |f| gem_files.include?(f.split('/')[0]) }
 
-  spec.add_dependency 'rails', '>= 6.1', '< 7.1'
+  spec.add_dependency 'rails', '>= 7.0', '< 8.1'
 
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.1.0'
 
   spec.add_development_dependency 'mocha'
   spec.add_development_dependency 'ndr_dev_support', '>= 6.0'
   spec.add_development_dependency 'ndr_stats' # support is included, but not required.
   spec.add_development_dependency 'puma'
   spec.add_development_dependency 'sprockets-rails', '>= 3.0.0'
+
+  # Rails 7.0 does not support sqlite3 2.x; it specifies gem "sqlite3", "~> 1.4"
+  # in lib/active_record/connection_adapters/sqlite3_adapter.rb
+  # cf. gemfiles/Gemfile.rails70
   spec.add_development_dependency 'sqlite3'
 end

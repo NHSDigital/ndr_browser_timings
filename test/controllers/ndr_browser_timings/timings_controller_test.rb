@@ -5,8 +5,10 @@ module NdrBrowserTimings
     include Engine.routes.url_helpers
 
     test 'without authentication' do
-      with_auth_check(->(_req) { false }) do
-        post '/browser_timings'
+      assert_nothing_raised do
+        with_auth_check(->(_req) { false }) do
+          post '/browser_timings'
+        end
       end
     end
 
