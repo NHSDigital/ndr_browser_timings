@@ -1,0 +1,394 @@
+---
+file safety:
+  ".github/CODEOWNERS":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a5d6cba96a035e5b3244311cc204c86d574d5455
+  ".github/workflows/lint.yml":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: b6cf678a5742dadd36008457e4939a7ad224e370
+  ".github/workflows/test.yml":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  ".gitignore":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  ".rubocop.yml":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 1e82391c239602fb890758300ec390aac8678351
+  CHANGELOG.md:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  CODE_OF_CONDUCT.md:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 4d50dab003d7075c14c55a9352eaf3c5cb35baa4
+  Gemfile:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  README.md:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: d5e001d5e48f84caae33382e47d8f30cae9867ed
+  Rakefile:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 04fa4a1a86dcbd1f2e7ef0af6e8fed6986d2c9c1
+  app/assets/config/ndr_browser_timings_manifest.js:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  app/assets/images/ndr_browser_timings/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  app/assets/javascripts/ndr_browser_timings/ndr_browser_timings.js:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 401f14549771c19a5865bc5eed735d0e8eb0d7f9
+  app/assets/stylesheets/ndr_browser_timings/application.css:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  app/controllers/ndr_browser_timings/application_controller.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 30d3361a8a4eac112e6164e131d3c5378e54992a
+  app/controllers/ndr_browser_timings/timings_controller.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 001c5740d20d4ba3a0841b76d35b663fb07ec246
+  app/helpers/ndr_browser_timings/meta_tag_helper.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 401f14549771c19a5865bc5eed735d0e8eb0d7f9
+  app/helpers/ndr_browser_timings/timings_helper.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  app/jobs/ndr_browser_timings/application_job.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  app/mailers/ndr_browser_timings/application_mailer.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  app/models/ndr_browser_timings/application_record.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  app/models/ndr_browser_timings/performance_timing.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 7b2d8a363b4547e2398712741fc0c77ddbc52344
+  app/models/ndr_browser_timings/resource_timing.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 7b2d8a363b4547e2398712741fc0c77ddbc52344
+  app/views/layouts/ndr_browser_timings/application.html.erb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  bin/rails:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  config/routes.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 94a33985dea5ec45cb58bd1125ac0853fec6108f
+  gemfiles/Gemfile.rails70:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  gemfiles/Gemfile.rails71:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  gemfiles/Gemfile.rails72:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  gemfiles/Gemfile.rails80:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  lib/ndr_browser_timings.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 30d3361a8a4eac112e6164e131d3c5378e54992a
+  lib/ndr_browser_timings/engine.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 4c201b613b3d9fda20a1452daec1581b52c695f5
+  lib/ndr_browser_timings/recorders/logger.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  lib/ndr_browser_timings/recorders/ndr_stats.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: adf234ec1f149201cbccb1de3dc8841ba6189fd7
+  lib/ndr_browser_timings/version.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3de116d4592c841b575e3d4e0534fdf6953841b2
+  lib/tasks/ndr_browser_timings_tasks.rake:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  ndr_browser_timings.gemspec:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  test/controllers/ndr_browser_timings/timings_controller_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  test/dummy/.ruby-version:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/Rakefile:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/assets/config/manifest.js:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  test/dummy/app/assets/images/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/app/assets/javascripts/application.js:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  test/dummy/app/assets/stylesheets/application.css:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/app/channels/application_cable/channel.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/channels/application_cable/connection.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/controllers/application_controller.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  test/dummy/app/controllers/concerns/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/app/helpers/application_helper.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/jobs/application_job.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/mailers/application_mailer.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/models/application_record.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/app/models/concerns/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/app/views/application/welcome.html.erb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 1f2e973ce2bb3a6377978f40ec8344759f7d9c90
+  test/dummy/app/views/layouts/application.html.erb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 94a33985dea5ec45cb58bd1125ac0853fec6108f
+  test/dummy/app/views/layouts/mailer.html.erb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/app/views/layouts/mailer.text.erb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/bin/rails:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/bin/rake:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/bin/setup:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config.ru:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/application.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 6b4684f123e032f917d278a21db74b0e67a9dc1a
+  test/dummy/config/boot.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/cable.yml:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/config/database.yml:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/config/environment.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/environments/development.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/environments/production.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/environments/test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 19202d74d03416d96d839acb15ea383f4c9bbf09
+  test/dummy/config/initializers/application_controller_renderer.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/assets.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/backtrace_silencers.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/content_security_policy.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/cookies_serializer.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/filter_parameter_logging.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/inflections.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/mime_types.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/initializers/wrap_parameters.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/locales/en.yml:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/config/puma.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/routes.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 3156f09d4096b2c41016128d3b901194f6df478f
+  test/dummy/config/spring.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c5423214985ecec1d2cd7e9c624a68c983b8a90d
+  test/dummy/config/storage.yml:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/lib/assets/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/log/.keep:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/404.html:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/422.html:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/500.html:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/apple-touch-icon-precomposed.png:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/apple-touch-icon.png:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/dummy/public/favicon.ico:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: a6693727721759aad118bed0bc0c19f268e688e6
+  test/helpers/meta_tag_helper_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 401f14549771c19a5865bc5eed735d0e8eb0d7f9
+  test/integration/navigation_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 1f2e973ce2bb3a6377978f40ec8344759f7d9c90
+  test/lib/recorders/logger_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c31cf127d4173ac0bc4435c4e9e3c6fbd4aa2401
+  test/lib/recorders/ndr_stats_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: adf234ec1f149201cbccb1de3dc8841ba6189fd7
+  test/models/ndr_browser_timings/performance_timing_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 7b2d8a363b4547e2398712741fc0c77ddbc52344
+  test/ndr_browser_timings_test.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 7b2d8a363b4547e2398712741fc0c77ddbc52344
+  test/test_helper.rb:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: d5e001d5e48f84caae33382e47d8f30cae9867ed
